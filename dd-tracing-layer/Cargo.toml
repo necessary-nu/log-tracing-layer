@@ -18,7 +18,15 @@ maintenance = { status = "actively-developed" }
 log-tracing-layer = { path = "../log-tracing-layer", version = "0.3.0" }
 tracing-subscriber = "0.3"
 tracing = "0.1"
-reqwest = { version = "0.11", features = ["gzip"] }
+reqwest = { version = "0.11.18", default-features = false, features = [
+    "tokio-rustls",
+    "brotli",
+    "gzip",
+    "deflate",
+    "json",
+    "rustls",
+    "rustls-tls",
+] }
 tokio = { version = "1", features = ["sync", "rt-multi-thread", "time"] }
 serde_json = "1"
 chrono = "0.4"
